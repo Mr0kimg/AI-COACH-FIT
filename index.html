@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="navbar">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#Mission">Mission</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="signup"><a href="signup.html">Sign Up</a></li><br><br>
+                <li id="time"><span id="greeting"></span></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to AI COACH FIT</h1>
+            <p>Your tagline or introduction goes here.</p>
+            <a href="signup.html" class="btn">GET STARTED</a>
+        </div>
+    </section>
+    <br>
+    <section id="about" class="section">
+        <div class="section-content">
+            <h2>About Us</h2>
+            <p>Welcome to AI COACH FIT, where we help you discover personalized exercises tailored to your age and fitness level. Whether you're looking to build strength, improve flexibility, or boost endurance, our AI-powered fitness coaching adapts to your needs.</p>
+
+        </div>
+    </section>
+    <br>
+    <section id="Mission" class="section">
+        <div class="section-content">
+        <h2>Our Mission</h2>
+        <p>Our mission is to empower individuals of all ages to lead healthier and more active lives through personalized fitness coaching. We believe that fitness should be accessible to everyone, and our goal is to help you achieve your fitness aspirations in a safe and enjoyable manner.</p>
+        </div>
+    </section>
+    <br>
+    <section id="#" class="section">
+        <div class="section-content">
+        <h2>Get Started Today</h2>
+        <p>Ready to take the next step towards a healthier you? Sign up now to get access to customized workout plans, nutritional guidance, and one-on-one coaching sessions with our experienced fitness trainers. Join our community and embark on a journey to transform your health and well-being!</p>
+        <a href="signup.html" class="btn">Sign Up Now</a>
+        </div>
+    </section>
+    <br>
+    <section id="contact" class="section">
+        <div class="section-content">
+            <h2>Contact Us</h2>
+            <p>For inquiries or support, please email us at <a href="mailto:aiCoachfit@gmail.com">aiCoachfit@gmail.com</a>.</p>
+        </div>
+    </section>
+    <br>
+    <footer>
+        <div style="text-align: center;"class="copyright">
+            <p>&copy; 2024 Ai Coach Fit. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const date = new Date();
+            const hour = date.getHours();
+
+            let greeting = '';
+            if (hour >= 5 && hour < 12) {
+                greeting = 'Good morning !';
+            } else if (hour >= 12 && hour < 18) {
+                greeting = 'Good afternoon !';
+            } else {
+                greeting = 'Good evening !';
+            }
+
+            document.getElementById('greeting').textContent = greeting;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to right, #ff7e5f, #feb47b, #ffc89f);
+    color: #fff;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #333;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    text-align: center;
+}
+
+.navbar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    display: inline-block;
+    margin-right: 20px;
+    animation: fadeInScale 0.5s ease forwards;
+}
+
+.navbar li:last-child {
+    margin-right: 0;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #fff;
+    color: #333;
+    transform: translateY(-3px);
+}
+
+.hero {
+    text-align: center;
+    padding: 5rem 0;
+    background-image: url('https://www.shutterstock.com/image-photo/hologram-athlete-running-wellness-exercise-600nw-2240460425.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.hero:hover {
+    transform: scale(1.05);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hero:hover::before {
+    opacity: 0.5;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: #dbdbdb;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: moveText 3s ease infinite alternate;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+.section {
+    transition: background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.section:hover {
+    background-color: #f8f9fa;
+}
+
+.section:hover .section-content {
+    transform: scale(1.05);
+    filter: brightness(1.1) contrast(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.section-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-content h2 {
+    font-size: 2.5em;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.section-content p {
+    font-size: 1.2em;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.section-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section-content ul li {
+    font-size: 1.2em;
+    color: #555555;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 2rem 0;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .navbar li {
+        margin-right: 10px;
+    }
+    .hero p {
+        font-size: 1.2em;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+#time {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333333;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+#time:hover {
+    color: #000000;
+    cursor: pointer;
+    transform: scale(1.05) rotate(-1deg);
+}
+
+@keyframes vibrate {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(-2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+#time:hover {
+    animation: vibrate 0.4s ease;
+}

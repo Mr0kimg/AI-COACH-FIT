@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-form">
+            <h2>Sign Up</h2>
+                <form id="nameForm">
+                <div class="form-group">
+        <input type="text" id="nameInput" placeholder="Your Name">
+                </div>
+
+    <form id="signup-form">
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" placeholder="Your Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <input type="number" id="age" placeholder="Your Age" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Choose a Password" required>
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+        </form>
+
+    <footer>
+        <div class="copyright">
+            <p>&copy; 2024 Ai Coach Fit. All rights reserved.</p>
+        </div>
+    </footer>
+
+        </div>
+    </div>
+
+
+
+
+    <script>
+        document.getElementById('nameForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+  
+            const name = document.getElementById('nameInput').value.trim();
+
+
+            window.location.href = `main.html?name=${encodeURIComponent(name)}`;
+        });
+    </script>
+
+</body>
+</html>
